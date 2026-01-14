@@ -49,3 +49,4 @@ reports/
 
 # Typescript
 .env
+.file_activity_report.json

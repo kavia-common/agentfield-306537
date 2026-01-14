@@ -1452,10 +1452,10 @@ func cloneBytes(src []byte) []byte {
 
 func writeExecutionError(ctx *gin.Context, err error) {
 	if err == nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "unknown error"})
+		RespondInternalError(ctx, "unknown error")
 		return
 	}
-	ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	RespondBadRequest(ctx, err.Error())
 }
 
 func pointerTime(t time.Time) *time.Time {
